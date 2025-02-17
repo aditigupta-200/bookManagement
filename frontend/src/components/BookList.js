@@ -6,7 +6,7 @@
 
 //   const fetchBooks = async () => {
 //     try {
-//       const response = await axios.get("http://localhost:5000/api/books");
+//       const response = await axios.get("https://bookmanagement-1-t6v7.onrender.com/api/books");
 //       setBooks(response.data);
 //     } catch (err) {
 //       console.error("Error fetching books:", err);
@@ -59,7 +59,9 @@ const BookList = ({ onEdit, onDelete }) => {
   const fetchBooks = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.get("http://localhost:5000/api/books");
+      const response = await axios.get(
+        "https://bookmanagement-1-t6v7.onrender.com/api/books"
+      );
       setBooks(response.data);
       setIsLoading(false);
     } catch (err) {

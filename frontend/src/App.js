@@ -131,7 +131,9 @@ const App = () => {
   // Function to handle delete action
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/books/${id}`);
+      await axios.delete(
+        `https://bookmanagement-1-t6v7.onrender.com/api/books/${id}`
+      );
       alert("Book deleted successfully");
     } catch (err) {
       console.error("Error deleting book:", err);

@@ -11,11 +11,14 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/auth/register", {
-        username,
-        email,
-        password,
-      });
+      await axios.post(
+        "https://bookmanagement-1-t6v7.onrender.com/api/auth/register",
+        {
+          username,
+          email,
+          password,
+        }
+      );
       history.push("/login");
     } catch (error) {
       console.error("Signup error:", error);

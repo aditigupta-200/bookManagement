@@ -24,21 +24,27 @@ const BookForm = ({ currentBook, onFormSubmit }) => {
     try {
       if (currentBook) {
         // Update existing book
-        await axios.put(`http://localhost:5000/api/books/${currentBook._id}`, {
-          title,
-          author,
-          genre,
-          year,
-        });
+        await axios.put(
+          `https://bookmanagement-1-t6v7.onrender.com/api/books/${currentBook._id}`,
+          {
+            title,
+            author,
+            genre,
+            year,
+          }
+        );
         alert("Book updated successfully");
       } else {
         // Create a new book
-        await axios.post("http://localhost:5000/api/books", {
-          title,
-          author,
-          genre,
-          year,
-        });
+        await axios.post(
+          "https://bookmanagement-1-t6v7.onrender.com/api/books",
+          {
+            title,
+            author,
+            genre,
+            year,
+          }
+        );
         alert("Book added successfully");
       }
       onFormSubmit(); // Reset form after submit
